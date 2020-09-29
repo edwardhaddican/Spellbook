@@ -24,3 +24,29 @@ form div {
   display: flex;
   flex-direction: column;
 }
+
+.form-name-level-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-str-dex-con-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-int-wis-cha-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-inner-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}

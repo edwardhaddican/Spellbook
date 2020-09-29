@@ -50,14 +50,22 @@ export default class SingleSpell extends React.Component {
         <h1>{spellDetails.name}</h1>
         <p>Spell Level: {spellDetails.level}</p>
         <p>Casting Time: {spellDetails.casting_time}</p>
-        <p>Damage: {spellDetails.damage.damage_at_slot_level[2]}</p>
-        <p>Damage Type: {spellDetails.damage.damage_type.name}</p>
-        <p>At Higher Levels: {spellDetails.higher_level[0]}</p>
+
+        {spellDetails.damage ? (
+          <div>
+            <p>Damage Type: {spellDetails.damage.damage_type.name}</p>
+            <p>Damage: {spellDetails.damage.damage_at_slot_level[2]}</p>
+          </div>
+        ) : null}
+
+        {spellDetails.higher_level ? (
+          <p>At Higher Levels: {spellDetails.higher_level[0]}</p>
+        ) : null}
         <p>Duration: {spellDetails.duration}</p>
 
         <p>Components: {spellDetails.components}</p>
         <p>Material: {spellDetails.material}</p>
-        <p>Concentration: {spellDetails.concentration}</p>
+        <p>Concentration: {spellDetails.concentration.toString()}</p>
 
         <p>Description: {spellDetails.desc}</p>
       </div>
