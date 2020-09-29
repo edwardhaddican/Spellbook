@@ -1,17 +1,19 @@
 import React from 'react'
 import Axios from 'axios'
 import SearchBar from './SearchBar'
+import {Link} from 'react-router-dom'
 
 export default class AllSpells extends React.Component {
   constructor() {
     super()
     this.state = {
-      allSpells: '',
+      allSpells: [],
       error: '',
-      classSpells: {}
+      classSpells: {},
+      displayedSpells: [],
+      currentClass: ''
     }
   }
-  //i want all the spells to just load to this page when you open up the page
 
   componentDidMount() {
     this.fetchAllSpells()
@@ -33,7 +35,8 @@ export default class AllSpells extends React.Component {
           error: ''
         })
         this.setState({
-          allSpells: response.data.results
+          allSpells: response.data.results,
+          displayedSpells: response.data.results
         })
 
         console.log('state', this.state.allSpells)
@@ -70,11 +73,21 @@ export default class AllSpells extends React.Component {
   }
 
   render() {
-    console.log('class Spells', this.state.classSpells)
+    // console.log('class Spells', this.state.classSpells)
     return (
       <div>
         <h1>All Spells</h1>
         <SearchBar />
+        <div>
+          {this.state.allSpells.map(spell => {
+            // console.log('eee', spell)
+            return (
+              <div key={spell.index}>
+                <Link to={`/allSpells/${spell.index}`}>{spell.name}</Link>
+              </div>
+            )
+          })}
+        </div>
       </div>
     )
   }

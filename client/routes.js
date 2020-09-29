@@ -7,7 +7,8 @@ import {
   Signup,
   UserHome,
   NewCharacterForm,
-  AllSpells
+  AllSpells,
+  SingleSpell
 } from './components'
 import {me} from './store'
 
@@ -36,7 +37,12 @@ class Routes extends Component {
               path="/newcharacterform"
               component={NewCharacterForm}
             />
-            <Route exact path="/allspells" component={AllSpells} />
+            <Route exact path="/allSpells" component={AllSpells} />
+            <Route
+              exact
+              path="/allSpells/:spellIndex"
+              component={SingleSpell}
+            />
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}

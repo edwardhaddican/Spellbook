@@ -9,6 +9,7 @@ class SearchBar extends React.Component {
       error: ''
     }
     this.fetchSpell = this.fetchSpell.bind(this)
+    this.searchBarUpdate = this.searchBarUpdate.bind(this)
   }
 
   searchBarUpdate(event) {
