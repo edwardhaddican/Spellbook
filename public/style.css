@@ -20,9 +20,12 @@ form div {
   display: inline-block;
 }
 
+/* Single Spell Page */
+
 .single-spell-container {
   display: flex;
   flex-direction: column;
+  margin-left: 3rem;
 }
 
 .form-name-level-container {

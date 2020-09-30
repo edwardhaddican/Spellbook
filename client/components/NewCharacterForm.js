@@ -128,7 +128,7 @@ export default class NewCharacterForm extends React.Component {
             </div>
           </div>
 
-          <div className="">
+          <div className="new-character-form-button">
             <button
               className="button"
               type="submit"
